@@ -37,7 +37,7 @@ export class ItemsComponent implements OnInit {
 
   deleteTask(id:number) {
     this._todoService.deleteTask(id);
-    this.setAll();
+    this.todoList = this._todoService.todoList;
   }
 
   setAll() {

@@ -1,24 +1,25 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'statusFilter'
+  name: 'statusFilter',
+  pure: false
 })
 export class StatusFilterPipe implements PipeTransform {
 
   transform(value: any[], args?: any): any {
-    
-    switch(args) {
+
+    switch (args) {
       case 'all':
-          value = value;
-          break;
+        value = value;
+        break;
       case 'active':
-          value = value.filter(item => item.done === false );
-          break;
+        value = value.filter(item => item.done === false);
+        break;
       case 'completed':
-          value = value.filter(item => item.done != false );
-          break;
+        value = value.filter(item => item.done != false);
+        break;
     }
-    
+
     return value;
   }
 

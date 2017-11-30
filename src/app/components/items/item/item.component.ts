@@ -19,5 +19,5 @@ export class ItemComponent implements OnInit {
   deleteTask(id:number){
     this.onDelete.emit(id);
   }
-
+  
 }

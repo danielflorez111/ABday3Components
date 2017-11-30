@@ -13,7 +13,7 @@ import { StatusFilterPipe } from './status-filter.pipe';
     AppComponent,
     ItemsComponent,
     ItemComponent,
-    StatusFilterPipe,
+    StatusFilterPipe
   ],
   imports: [
     BrowserModule,
