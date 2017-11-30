@@ -7,20 +7,28 @@ export class TodoService {
   _todoList: IItem[] = [];
 
   constructor() {
-    this._todoList = [{id: 0, task: "Go to the gym", done: false}, {id: 1, task: "Do the homework", done: false }];
+    this._todoList = [{ id: 0, task: "Go to the gym", done: false }, { id: 1, task: "Do the homework", done: false }];
   }
 
-  get todoList():IItem[] {
+  get todoList(): IItem[] {
     return this._todoList;
   }
 
-  addTask(taskObj:IItem) {
+  addTask(taskObj: IItem) {
     this._todoList.push(taskObj);
   }
 
   deleteTask(id: number) {
-    let index = this._todoList.map( item => item.id ).indexOf(id);
-    this._todoList.splice(index,1);
+    let index = this._todoList.map(item => item.id).indexOf(id);
+    this._todoList.splice(index, 1);
+  }
+
+  completeAll() {
+    this._todoList.map(item => item.done = true);
+  }
+
+  clearCompleted() {
+    this._todoList = this._todoList.filter(item => !item.done);
   }
 
 }

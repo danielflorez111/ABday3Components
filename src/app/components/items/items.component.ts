@@ -20,11 +20,11 @@ export class ItemsComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+
   get itemsLeft(): number {
-    return this.todoList.filter( item => item.done === false).length;
+    return this.todoList.filter( item => !item.done).length;
   }
-  
+
   addTask() {
     if(this.task.trim() !== "") {
       let id:number = this.getRandomInt(1000, 9999);
@@ -37,7 +37,6 @@ export class ItemsComponent implements OnInit {
 
   deleteTask(id:number) {
     this._todoService.deleteTask(id);
-    this.todoList = this._todoService.todoList;
   }
 
   setAll() {
@@ -54,6 +53,15 @@ export class ItemsComponent implements OnInit {
   
   getRandomInt(min:number, max:number):number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  completeAll() {
+    this._todoService.completeAll();
+  }
+  
+  clearCompleted() {
+    this._todoService.clearCompleted();
+    this.todoList = this._todoService.todoList;
   }
 
 }
