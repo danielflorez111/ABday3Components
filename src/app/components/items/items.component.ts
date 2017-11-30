@@ -11,7 +11,7 @@ export class ItemsComponent implements OnInit {
 
   todoList:IItem[] = [];
   task:string;
-  status:string;
+  status:string = "all";
   _itemsLeft:number;
 
   constructor(private _todoService:TodoService) {
@@ -30,6 +30,7 @@ export class ItemsComponent implements OnInit {
       let taskObj = { task: this.task,  done: false };
       this._todoService.addTask(taskObj);
       this.task = "";
+      this.setAll();
     }
   }
 

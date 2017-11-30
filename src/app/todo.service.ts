@@ -7,7 +7,7 @@ export class TodoService {
   private _todoList: IItem[] = [];
 
   constructor() {
-    this._todoList = [{task: "Task 1", done: false}, { task: "Task 2", done: false }];
+    this._todoList = [{task: "Go to the gym", done: false}, { task: "Do the homework", done: false }];
   }
 
   get todoList():IItem[] {

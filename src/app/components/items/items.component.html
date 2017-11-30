@@ -12,7 +12,7 @@
 <br>
 
 <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
-  <button type="button" class="btn btn-light" (click)="setAll()">All</button>
-  <button type="button" class="btn btn-light" (click)="setActive()">Active</button>
-  <button type="button" class="btn btn-light" (click)="setCompleted()">Completed</button>
+  <button [ngClass]="{active: status === 'all'}" type="button" class="btn btn-light" (click)="setAll()">All</button>
+  <button [ngClass]="{active: status === 'active'}" type="button" class="btn btn-light" (click)="setActive()">Active</button>
+  <button [ngClass]="{active: status === 'completed'}" type="button" class="btn btn-light" (click)="setCompleted()">Completed</button>
 </div>
