@@ -1,1 +1,1 @@
-<app-item *ngFor="let item of todoList | statusFilter: status; let i = index"></app-item>
+<app-item *ngFor="let item of todoList" [item]="item"></app-item>
