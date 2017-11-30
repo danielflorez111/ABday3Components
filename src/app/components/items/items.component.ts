@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoService } from './../../todo.service';
+import { IItem } from './../../item.interface';
 
 @Component({
   selector: 'app-items',
@@ -8,7 +9,7 @@ import { TodoService } from './../../todo.service';
 })
 export class ItemsComponent implements OnInit {
 
-  todoList = [];
+  todoList:IItem[] = [];
   task:string;
   status:string;
   _itemsLeft:number;
@@ -32,7 +33,7 @@ export class ItemsComponent implements OnInit {
     }
   }
 
-  deleteTask(i) {
+  deleteTask(i:number) {
     this._todoService.deleteTask(i);
   }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { IItem } from './../../../item.interface';
 
 @Component({
   selector: 'app-item',
@@ -7,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class ItemComponent implements OnInit {
 
-  @Input() item;
+  @Input() item:IItem;
   @Output() onDelete = new EventEmitter();
 
   constructor() { }

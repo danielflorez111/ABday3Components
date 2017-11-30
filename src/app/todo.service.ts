@@ -1,25 +1,25 @@
 import { Injectable } from '@angular/core';
+import { IItem } from './item.interface';
 
 @Injectable()
 export class TodoService {
 
-  _todoList = [
-    {task:'Task 1', done:false}, 
-    {task:'Task 2', done:false} 
-  ];
+  private _todoList: IItem[] = [];
 
-  constructor() { }
+  constructor() {
+    this._todoList = [{task: "Task 1", done: false}, { task: "Task 2", done: false }];
+  }
 
-  get todoList() {
+  get todoList():IItem[] {
     return this._todoList;
   }
-  
-  addTask(taskObj) {
+
+  addTask(taskObj:IItem) {
     this._todoList.push(taskObj);
   }
-  
-  deleteTask(i:number) {
+
+  deleteTask(i: number) {
     this._todoList.splice(i, 1);
   }
-  
+
 }
