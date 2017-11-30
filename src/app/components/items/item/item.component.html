@@ -1,0 +1,5 @@
+<div>
+  <input type="checkbox" [(ngModel)]="item.done"> 
+  <span [ngClass]="{done: item.done}"> {{ item.task }} </span>
+  <button (click)="deleteTask(i)" >Delete</button>
+</div>
