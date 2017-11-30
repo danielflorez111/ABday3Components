@@ -1,12 +1,5 @@
-<h3>ToDo List</h3>
-
-<!--input type="text" placeholder="Add task" [(ngModel)]="task"-->
-<button type="submit" (click)="addTask()">Add task</button>
-
-<br>
-
-<app-items></app-items>
-
-<button (click)="status = 'all'">All</button>
-<button (click)="status = 'active'">Active</button>
-<button (click)="status = 'completed'">Completed</button>
+<div class="container top-40 col-md-4 text-center">
+    <h1 class="display-4">To do list</h1>
+    <br>
+    <app-items></app-items>
+</div>

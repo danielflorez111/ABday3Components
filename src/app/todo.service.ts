@@ -14,4 +14,12 @@ export class TodoService {
     return this._todoList;
   }
   
+  addTask(taskObj) {
+    this._todoList.push(taskObj);
+  }
+  
+  deleteTask(i:number) {
+    this._todoList.splice(i, 1);
+  }
+  
 }

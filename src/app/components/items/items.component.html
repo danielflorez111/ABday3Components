@@ -1,1 +1,18 @@
-<app-item *ngFor="let item of todoList" [item]="item"></app-item>
+<input type="text" placeholder="Add task and hit enter" [(ngModel)]="task" (keyup.enter)="addTask()" class="form-control">
+
+<br>
+
+<app-item *ngFor="let item of todoList | statusFilter: status; let i = index" [item]="item" (onDelete)="deleteTask(i)"></app-item>
+
+<br>
+
+<span class="task"> Items left: {{itemsLeft}} </span>
+
+<br>
+<br>
+
+<div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-light" (click)="setAll()">All</button>
+  <button type="button" class="btn btn-light" (click)="setActive()">Active</button>
+  <button type="button" class="btn btn-light" (click)="setCompleted()">Completed</button>
+</div>
