@@ -16,8 +16,8 @@ export class ItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  deleteTask(){
-    this.onDelete.emit();
+  deleteTask(id:number){
+    this.onDelete.emit(id);
   }
 
 }

@@ -2,7 +2,7 @@
 
 <br>
 
-<app-item *ngFor="let item of todoList | statusFilter: status; let i = index" [item]="item" (onDelete)="deleteTask(i)"></app-item>
+<app-item *ngFor="let item of todoList | statusFilter: status" [item]="item" (onDelete)="deleteTask($event)"></app-item>
 
 <br>
 

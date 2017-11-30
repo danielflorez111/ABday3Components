@@ -4,10 +4,10 @@ import { IItem } from './item.interface';
 @Injectable()
 export class TodoService {
 
-  private _todoList: IItem[] = [];
+  _todoList: IItem[] = [];
 
   constructor() {
-    this._todoList = [{task: "Go to the gym", done: false}, { task: "Do the homework", done: false }];
+    this._todoList = [{id: 0, task: "Go to the gym", done: false}, {id: 1, task: "Do the homework", done: false }];
   }
 
   get todoList():IItem[] {
@@ -18,8 +18,9 @@ export class TodoService {
     this._todoList.push(taskObj);
   }
 
-  deleteTask(i: number) {
-    this._todoList.splice(i, 1);
+  deleteTask(id: number) {
+    let index = this._todoList.map( item => item.id ).indexOf(id);
+    this._todoList.splice(index,1);
   }
 
 }

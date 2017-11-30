@@ -9,10 +9,10 @@
 
     <span class="task" [ngClass]="{done: item.done}"> {{ item.task }} </span>
     
-    <button type="button" class="close" (click)="deleteTask()">
+    <button type="button" class="close" (click)="deleteTask(item.id)">
       <span>&times;</span>
     </button>
 
   </li>
-
+  
 </ul>
